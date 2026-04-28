@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bidisha Saikia | Researcher · Policy · Advocacy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --paper: #f5f2eb;
+      --accent: #7c4f2f;
+      --accent-light: #c8956c;
+      --muted: #6b6860;
+      --rule: #d4cfc6;
+      --white: #ffffff;
+      --section-bg: #faf8f4;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(245,242,235,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      padding: 140px 0 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem; padding-right: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-left {}
+    .hero-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 32px; height: 1px;
+      background: var(--accent);
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--accent);
+      padding: 0.75rem 1.8rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .hero-cta:hover { background: var(--ink); }
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .hero-stat {
+      border-left: 2px solid var(--accent-light);
+      padding-left: 1.2rem;
+    }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* SECTION BASE */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 32px; height: 1px;
+      background: var(--accent);
+    }
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 2.5rem;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ABOUT */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-left {}
+    .about-right p {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+    .about-right p strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .tags {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--rule);
+      padding: 0.35rem 0.8rem;
+      color: var(--muted);
+    }
+
+    /* EXPERIENCE */
+    #experience { background: var(--section-bg); max-width: 100%; }
+    #experience > .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0;
+    }
+    .exp-item {
+      display: contents;
+    }
+    .exp-item + .exp-item .exp-date,
+    .exp-item + .exp-item .exp-body {
+      border-top: 1px solid var(--rule);
+    }
+    .exp-date {
+      padding: 2rem 2rem 2rem 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      padding-top: 2.2rem;
+    }
+    .exp-date .org {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 0.3rem;
+    }
+    .exp-body {
+      padding: 2rem 0;
+    }
+    .exp-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .exp-body ul {
+      list-style: none;
+      padding: 0;
+    }
+    .exp-body ul li {
+      font-size: 0.92rem;
+      color: var(--muted);
+      padding: 0.25rem 0 0.25rem 1.2rem;
+      position: relative;
+    }
+    .exp-body ul li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: var(--accent-light);
+      font-size: 0.8rem;
+    }
+
+    /* CAMPAIGNS */
+    #campaigns {}
+    .campaign-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--rule);
+    }
+    .campaign-card {
+      background: var(--paper);
+      padding: 2rem;
+    }
+    .campaign-card .c-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--rule);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+    .campaign-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .campaign-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .campaign-card .c-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent-light);
+      padding-bottom: 1px;
+    }
+
+    /* PUBLICATIONS */
+    #publications { background: var(--section-bg); max-width: 100%; }
+    #publications > .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .pub-list {}
+    .pub-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: start;
+    }
+    .pub-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--accent-light);
+      padding-top: 0.1rem;
+    }
+    .pub-details h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+      line-height: 1.4;
+    }
+    .pub-details .pub-journal {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 0.3rem;
+    }
+    .pub-details .pub-authors {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .pub-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 0.5rem;
+    }
+    .pub-link:hover { color: var(--ink); }
+
+    /* WRITING */
+    #writing {}
+    .writing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .writing-card {
+      border: 1px solid var(--rule);
+      padding: 1.8rem;
+      transition: border-color 0.2s;
+    }
+    .writing-card:hover { border-color: var(--accent-light); }
+    .writing-card .w-type {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+    .writing-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+    .writing-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .writing-card a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    /* BLOG */
+    #blog { background: var(--ink); max-width: 100%; }
+    #blog > .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    #blog .section-label { color: var(--accent-light); }
+    #blog .section-label::before { background: var(--accent-light); }
+    #blog h2 { color: var(--paper); }
+    .blog-note {
+      font-size: 0.92rem;
+      color: #888880;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+    }
+    .blog-placeholder {
+      border: 1px solid #333330;
+      padding: 3rem;
+      text-align: center;
+    }
+    .blog-placeholder p {
+      color: #666660;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .blog-placeholder code {
+      font-size: 0.8rem;
+      color: var(--accent-light);
+      background: #222220;
+      padding: 0.6rem 1rem;
+      display: inline-block;
+      letter-spacing: 0.04em;
+    }
+
+    /* SKILLS */
+    #skills {}
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--rule);
+    }
+    .skill-group {
+      padding: 2rem;
+      border-right: 1px solid var(--rule);
+    }
+    .skill-group:last-child { border-right: none; }
+    .skill-group h4 {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .skill-group ul {
+      list-style: none;
+    }
+    .skill-group ul li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #eeeae3;
+    }
+    .skill-group ul li:last-child { border-bottom: none; }
+
+    /* CONTACT */
+    #contact { background: var(--section-bg); max-width: 100%; }
+    #contact > .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .contact-info p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: var(--accent); }
+    .contact-link .cl-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      width: 80px;
+    }
+    .github-box {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      padding: 2rem;
+    }
+    .github-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .github-box p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .github-steps {
+      list-style: none;
+      counter-reset: steps;
+    }
+    .github-steps li {
+      counter-increment: steps;
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 0.5rem 0 0.5rem 2rem;
+      position: relative;
+      border-bottom: 1px solid var(--rule);
+    }
+    .github-steps li:last-child { border-bottom: none; }
+    .github-steps li::before {
+      content: counter(steps);
+      position: absolute; left: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--accent-light);
+    }
+    .github-steps li code {
+      font-size: 0.78rem;
+      background: #f0ede6;
+      padding: 0.1rem 0.4rem;
+      color: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; gap: 2.5rem; }
+      #about { grid-template-columns: 1fr; gap: 2rem; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .exp-date { padding-top: 0; padding-bottom: 0; }
+      .campaign-grid { grid-template-columns: 1fr; }
+      .writing-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      #contact > .inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#top">Bidisha Saikia</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#campaigns">Campaigns</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="top" class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Policy · Research · Advocacy</div>
+    <h1>Bidisha<br/><em>Saikia</em></h1>
+    <p class="hero-desc">Policy and development professional with 8+ years of experience in qualitative research, gender justice, community-led interventions, and human rights advocacy across India and the UK.</p>
+    <a href="#contact" class="hero-cta">Get in Touch →</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat">
+      <div class="hero-stat-num">8+</div>
+      <div class="hero-stat-label">Years of professional experience</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">150+</div>
+      <div class="hero-stat-label">Campaigns supported at Change.org</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">2</div>
+      <div class="hero-stat-label">Peer-reviewed publications</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">India · UK</div>
+      <div class="hero-stat-label">Cross-country professional experience</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-left">
+    <div class="section-label">About</div>
+    <h2>Research<br/>grounded in<br/><em>lived realities</em></h2>
+  </div>
+  <div class="about-right">
+    <p>I am a <strong>qualitative researcher, ethnographer, and policy advocate</strong> working at the intersection of gender justice, human rights, and community-led change. My work spans academic research, government engagement, and programme delivery across Northeast India, South India, and the United Kingdom.</p>
+    <p>My research is published in peer-reviewed journals including the <strong>International Journal of Asian Christianity</strong> and the <strong>Intercultural Human Rights Law Review</strong>, and has been presented at the BSA Sociology of Religion Annual Conference at the University of Bristol.</p>
+    <p>I have led campaigns featured on <strong>NDTV, Times of India, Business Standard</strong>, and Vogue India, and have been recognised by the German Federal Ministry for Economic Cooperation for my work on menstrual health and women's entrepreneurship in Northeast India.</p>
+    <p>I hold an MA in Social Work (Community Organisation & Development Practice) from Tata Institute of Social Sciences and a BA in Sociology (Honours) from the University of Delhi.</p>
+    <div class="tags">
+      <span class="tag">Gender Justice</span>
+      <span class="tag">Qualitative Research</span>
+      <span class="tag">Ethnography</span>
+      <span class="tag">Policy Advocacy</span>
+      <span class="tag">Anti-Slavery</span>
+      <span class="tag">Reproductive Health</span>
+      <span class="tag">Behaviour Change</span>
+      <span class="tag">NVivo</span>
+      <span class="tag">Northeast India</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- EXPERIENCE -->
+<div id="experience">
+  <div class="inner">
+    <div class="section-label">Experience</div>
+    <h2>Professional<br/>History</h2>
+    <div class="exp-grid">
+
+      <div class="exp-item">
+        <div class="exp-date">
+          Mar 2024 – Nov 2025<br/>London, UK
+          <div class="org">Bakhita Centre · St. Mary's University</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-title">Research & Programme Associate</div>
+          <ul>
+            <li>Managed the Centre's operational knowledge base, tracking ongoing research projects and deliverables for the Director</li>
+            <li>Planned and delivered high-profile events with 200+ attendees across multi-day programmes</li>
+            <li>Owned external communications for the Honorary Fellow network — senior academics and practitioners across multiple countries</li>
+            <li>Co-led the 2025 Summer School empowering women seeking asylum in the UK</li>
+            <li>Supervised foundation-year university students in research thesis development</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">
+          Jan 2025 – Jun 2025<br/>London, UK
+          <div class="org">Bath Social & Development Research Ltd</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-title">Qualitative Researcher</div>
+          <ul>
+            <li>Conducted and recorded 20 in-depth interviews following a standardised guide, ensuring informed consent and data confidentiality</li>
+            <li>Coordinated logistics including scheduling, travel, and transcription</li>
+            <li>Produced anonymised summary transcripts for analysis in collaboration with the project lead</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">
+          Apr 2022 – Jan 2024<br/>Delhi, India
+          <div class="org">Change.org</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-title">Campaign Strategist</div>
+          <ul>
+            <li>Provided end-to-end strategic support to 150+ clients — primarily marginalised women — helping design campaigns with clear objectives, stakeholder maps, and measurable outcomes</li>
+            <li>Facilitated direct meetings between clients and government officials at state and central levels; several campaigns resulted in concrete policy or administrative action</li>
+            <li>Built and managed relationships with journalists and media organisations to secure national-platform coverage</li>
+            <li>Ran structured coaching and capacity-building sessions with clients on leadership and communication</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">
+          Jan 2021 – Jun 2022<br/>Assam, India
+          <div class="org">University of Nottingham · Rights Lab</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-title">Research Consultant / Ethnographer</div>
+          <ul>
+            <li>Embedded for eight months in religious communities in Assam as a participant observer, researching anti-human trafficking work — directly engaging with survivors of modern slavery</li>
+            <li>Contributed to a $196,681 Templeton-funded project led by Prof. Kevin Bales CMG</li>
+            <li>Co-authored two peer-reviewed papers published in international journals</li>
+            <li>Presented findings at BSA SocRel Annual Conference 2023, University of Bristol</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">
+          Jun 2016 – Apr 2017<br/>Pune, India
+          <div class="org">Samagra Waste Management Ltd</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-title">Human Capital Development Associate</div>
+          <ul>
+            <li>Designed and delivered behaviour change training modules for franchisee entrepreneurs towards sanitation goals</li>
+            <li>Led recruitment and onboarding of women entrepreneurs; managed a team of 10</li>
+            <li>Worked closely with Pune Municipal Corporation; forged a partnership with MobiKwik for a savings scheme in urban slums</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">
+          Jul 2014 – May 2016<br/>Gujarat, India
+          <div class="org">Gandhi Fellowship · Piramal Foundation</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-title">Fellow</div>
+          <ul>
+            <li>Led organisational and instructional leadership development for principals of 10 low-income public schools and 50+ teachers, improving outcomes for 650 students</li>
+            <li>Designed innovative activity-based learning methods and trained officials in the Education Department, Government of Gujarat</li>
+            <li>Lived in slum areas of Surat for 80 days, practising social intelligence and community immersion</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CAMPAIGNS -->
+<section id="campaigns">
+  <div class="section-label">Key Campaigns</div>
+  <h2>Advocacy &amp;<br/>Social Change</h2>
+  <div class="campaign-grid">
+    <div class="campaign-card">
+      <div class="c-num">01</div>
+      <h3>Bleed With Dignity</h3>
+      <p>A sustained menstrual health advocacy campaign awarded the Change.org India grant in 2019. Founded Assam's first chapter for World Menstrual Hygiene Day. Featured on NDTV, Times of India, TIME8, Guwahati Times, and Business Standard.</p>
+      <span class="c-tag">Sexual & Reproductive Health</span>
+    </div>
+    <div class="campaign-card">
+      <div class="c-num">02</div>
+      <h3>Bridge for Sootea Schoolchildren</h3>
+      <p>Led a successful Change.org advocacy campaign to build a bridge for school students in Sootea village, Assam, who were crossing a river on aluminium vessels. The campaign resulted in concrete infrastructure action.</p>
+      <span class="c-tag">Education · Infrastructure</span>
+    </div>
+    <div class="campaign-card">
+      <div class="c-num">03</div>
+      <h3>She Creates Change</h3>
+      <p>As Campaign Strategist at Change.org, supported 150+ women from marginalised communities to design and win campaigns — facilitating government engagement, media outreach, and leadership development.</p>
+      <span class="c-tag">Gender Justice · Policy</span>
+    </div>
+    <div class="campaign-card">
+      <div class="c-num">04</div>
+      <h3>Her &amp; Now Programme</h3>
+      <p>Selected as one of a cohort of Northeast India startups for incubation and funding under the German Federal Ministry for Economic Cooperation's programme supporting women-led enterprises.</p>
+      <span class="c-tag">Entrepreneurship · Northeast India</span>
+    </div>
+    <div class="campaign-card">
+      <div class="c-num">05</div>
+      <h3>Open Defecation Free Pune</h3>
+      <p>Employed Behaviour Change Communications to design community engagement activities towards making Pune ODF. Coordinated with elected officials, community boards, and NGOs alongside Pune Municipal Corporation.</p>
+      <span class="c-tag">WASH · Behaviour Change</span>
+    </div>
+    <div class="campaign-card">
+      <div class="c-num">06</div>
+      <h3>Women Seeking Asylum — Summer School</h3>
+      <p>Co-led the 2025 Summer School at the Bakhita Centre, St. Mary's University, focused on empowering women seeking asylum in the UK through education and community support.</p>
+      <span class="c-tag">Migration · Protection</span>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<div id="publications">
+  <div class="inner">
+    <div class="section-label">Research</div>
+    <h2>Publications &amp;<br/>Conferences</h2>
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-year">2023</div>
+        <div class="pub-details">
+          <h4>Monitoring and Measuring the Ineffable</h4>
+          <div class="pub-journal">International Journal of Asian Christianity, 6(1), 122–143</div>
+          <div class="pub-authors">Saikia, B., & Bales, K.</div>
+          <a class="pub-link" href="https://doi.org/10.1163/25424246-06010007" target="_blank">View Publication →</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2023</div>
+        <div class="pub-details">
+          <h4>Exploring the Worldview of Religious Sisters: A Comparative Empirical Analysis of Altruistic/Voluntaristic Attitudes</h4>
+          <div class="pub-journal">Intercultural Human Rights Law Review, Vol. 17</div>
+          <div class="pub-authors">Saikia, B., Datta, M.N., Pulford, L.D., & Bales, K.</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2023</div>
+        <div class="pub-details">
+          <h4>Paper Presentation: Religion and Power</h4>
+          <div class="pub-journal">BSA Sociology of Religion (SocRel) Annual Conference · University of Bristol</div>
+          <div class="pub-authors">Presented research on prosocial religious behaviour and anti-trafficking work</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2019</div>
+        <div class="pub-details">
+          <h4>A Critical Assessment of the National Register of Citizens in Assam</h4>
+          <div class="pub-journal">Indian Journal of Law & Public Policy (ISSN: 2394-2657)</div>
+          <div class="pub-authors">Co-authored policy paper on citizenship, governance, and gendered impacts in Northeast India</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2019</div>
+        <div class="pub-details">
+          <h4>Rethinking Citizenship from a Gender Perspective</h4>
+          <div class="pub-journal">National Seminar · Tata Institute of Social Sciences</div>
+          <div class="pub-authors">Paper presented at TISS national seminar, 2019</div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2019</div>
+        <div class="pub-details">
+          <h4>Critical Geography South Asia Workshop</h4>
+          <div class="pub-journal">Feminist & Urban Queer Geographies · IISER Mohali</div>
+          <div class="pub-authors">Selected participant in interdisciplinary workshop on feminist and queer urban geographies</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- WRITING -->
+<section id="writing">
+  <div class="section-label">Popular Writing</div>
+  <h2>Public Writing &amp;<br/>Media</h2>
+  <div class="writing-grid">
+    <div class="writing-card">
+      <div class="w-type">Essay</div>
+      <h3>Queer Metropolis</h3>
+      <p>An essay exploring queer identities and urban spaces in India, published by Safetipin.</p>
+      <a href="https://safetipin.com/queer-metropolis/" target="_blank">Read Essay →</a>
+    </div>
+    <div class="writing-card">
+      <div class="w-type">Guest Article · Global Voices</div>
+      <h3>Four Change Leaders Combating Gender-Based Violence in Africa and India</h3>
+      <p>A feature on grassroots leaders challenging gender-based violence, published by Global Voices in December 2023.</p>
+      <a href="https://globalvoices.org/2023/12/14/four-change-leaders-combating-gender-based-violence-in-africa-and-india/" target="_blank">Read Article →</a>
+    </div>
+    <div class="writing-card">
+      <div class="w-type">Newspaper Article · Assam Tribune</div>
+      <h3>Time to Bloom on Menstruation</h3>
+      <p>An article on menstrual health, stigma, and the need for open public conversation, published in the Assam Tribune English daily, 2017.</p>
+    </div>
+    <div class="writing-card">
+      <div class="w-type">Media Features</div>
+      <h3>Goddesses of Today — Helios Watches &amp; Vogue India</h3>
+      <p>Featured in Helios Watches' Goddesses of Today campaign and Vogue India, 2023, celebrating women changemakers from across India.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<div id="blog">
+  <div class="inner">
+    <div class="section-label">Blog</div>
+    <h2>Thoughts &amp;<br/>Reflections</h2>
+    <p class="blog-note">This space is for writing on gender, research, policy, and social change. Posts will appear here once you set up your GitHub Pages site.</p>
+    <div class="blog-placeholder">
+      <p>To add blog posts, create a new <code>.html</code> file for each post and link them here. You can also integrate a simple static site generator like Jekyll, which GitHub Pages supports natively.</p>
+      <br/>
+      <code>_posts/2026-04-28-your-first-post.md</code>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <h2>Areas of<br/>Expertise</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>Research & Analysis</h4>
+      <ul>
+        <li>Qualitative Research Design</li>
+        <li>Ethnographic Fieldwork</li>
+        <li>In-depth Interviews</li>
+        <li>NVivo Data Analysis</li>
+        <li>Academic & Policy Writing</li>
+        <li>Behaviour Change Comms</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4>Policy & Government</h4>
+      <ul>
+        <li>Policy Research & Advocacy</li>
+        <li>Government Stakeholder Engagement</li>
+        <li>Programme Design & Evaluation</li>
+        <li>Civil Society Coordination</li>
+        <li>Campaign Strategy</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4>Programme Delivery</h4>
+      <ul>
+        <li>End-to-end Project Management</li>
+        <li>Multi-stakeholder Coordination</li>
+        <li>Capacity Building & Training</li>
+        <li>Event Management (200+ pax)</li>
+        <li>Team Leadership</li>
+        <li>Media & Communications</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <h4>Tools</h4>
+      <ul>
+        <li>NVivo</li>
+        <li>MS Office Suite</li>
+        <li>Asana · Slack</li>
+        <li>Canva · Mailchimp</li>
+        <li>LinkedIn · Social Media</li>
+        <li>Bitly · QR Tools</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="inner">
+    <div class="contact-info">
+      <div class="section-label">Contact</div>
+      <h2>Let's Work<br/>Together</h2>
+      <p>Available for research consultancies, gender expert rosters, programme advisory roles, and advocacy partnerships across India and internationally.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:bidishasaikia.kef@gmail.com">
+          <span class="cl-label">Email</span>
+          bidishasaikia.kef@gmail.com
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/bidisha-s-026bb4a3/" target="_blank">
+          <span class="cl-label">LinkedIn</span>
+          linkedin.com/in/bidisha-s-026bb4a3
+        </a>
+        <a class="contact-link" href="tel:+918975074513">
+          <span class="cl-label">Phone</span>
+          +91 89750 74513
+        </a>
+        <a class="contact-link" href="#">
+          <span class="cl-label">Location</span>
+          Guwahati, Assam, India
+        </a>
+      </div>
+    </div>
+    <div class="github-box">
+      <h3>How to Deploy on GitHub Pages</h3>
+      <p>Follow these steps to publish this site at <strong>yourusername.github.io</strong> for free.</p>
+      <ol class="github-steps">
+        <li>Create a GitHub account at <code>github.com</code> if you don't have one</li>
+        <li>Create a new repository named <code>yourusername.github.io</code></li>
+        <li>Upload the <code>index.html</code> file to the repository</li>
+        <li>Go to Settings → Pages → set Source to <code>main</code> branch</li>
+        <li>Your site will be live at <code>yourusername.github.io</code> within minutes</li>
+        <li>To use a custom domain (e.g. bidishasaikia.com), add a <code>CNAME</code> file and update your domain's DNS settings</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Bidisha Saikia &nbsp;·&nbsp; Researcher · Policy & Advocacy · Gender Justice
+</footer>
+
+</body>
+</html>
